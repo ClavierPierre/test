@@ -1,0 +1,124 @@
+{
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "basePath": "\/api",
+    "resourcePath": "\/referentiel-cause-list",
+    "apis": [
+        {
+            "path": "\/referentiel\/cause\/list",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Return a collection of CauseAccident",
+                    "nickname": "get_referentiel-cause-list",
+                    "parameters": [],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Return a collection of AccidentCause (objects)",
+                            "responseModel": "OupsBundle.Entity.Workflow.Accident.AccidentCause[]"
+                        }
+                    ],
+                    "type": "OupsBundle.Entity.Workflow.Accident.AccidentCause[]"
+                }
+            ]
+        },
+        {
+            "path": "\/referentiel\/cause\/{circonstance_id}\/list",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Return a collection of  cause sv Action",
+                    "nickname": "get_referentiel-cause-list",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "circonstance_id",
+                            "type": "string",
+                            "required": true
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Return a collection of cause sv Action(objects)",
+                            "responseModel": "OupsBundle.Entity.Workflow.Reason[]"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Invalid inputs"
+                        }
+                    ],
+                    "type": "OupsBundle.Entity.Workflow.Reason[]"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "OupsBundle.Entity.Workflow.Accident.AccidentCause": {
+            "id": "OupsBundle.Entity.Workflow.Accident.AccidentCause",
+            "description": null,
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Accident.AccidentCause[]": {
+            "id": "OupsBundle.Entity.Workflow.Accident.AccidentCause[]",
+            "description": "",
+            "properties": {
+                "": {
+                    "type": "array",
+                    "description": null,
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Accident.AccidentCause"
+                    }
+                }
+            },
+            "required": [
+                ""
+            ]
+        },
+        "OupsBundle.Entity.Workflow.Reason": {
+            "id": "OupsBundle.Entity.Workflow.Reason",
+            "description": null,
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Reason[]": {
+            "id": "OupsBundle.Entity.Workflow.Reason[]",
+            "description": "",
+            "properties": {
+                "": {
+                    "type": "array",
+                    "description": null,
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Reason"
+                    }
+                }
+            },
+            "required": [
+                ""
+            ]
+        }
+    },
+    "produces": [],
+    "consumes": [],
+    "authorizations": {
+        "apiKey": {
+            "type": "apiKey",
+            "passAs": "header",
+            "keyname": "Authorization"
+        }
+    }
+}

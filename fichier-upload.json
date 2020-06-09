@@ -1,0 +1,52 @@
+{
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "basePath": "\/api",
+    "resourcePath": "\/fichier-upload",
+    "apis": [
+        {
+            "path": "\/fichier\/upload\/{type}\/{id}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Upload file",
+                    "nickname": "post_fichier-upload",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "type",
+                            "type": "string",
+                            "required": true
+                        },
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "string",
+                            "required": true
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 201,
+                            "message": "Returned when the file has been successfully uploaded"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Returned when the input data are not valid or empty"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": [],
+    "produces": [],
+    "consumes": [],
+    "authorizations": {
+        "apiKey": {
+            "type": "apiKey",
+            "passAs": "header",
+            "keyname": "Authorization"
+        }
+    }
+}

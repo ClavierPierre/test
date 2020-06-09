@@ -1,0 +1,1662 @@
+{
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "basePath": "\/api",
+    "resourcePath": "\/closer-sd",
+    "apis": [
+        {
+            "path": "\/closer_sd",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Return a collection of closer sd to the point (latitude, longitude)",
+                    "nickname": "get_closer-sd",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "rayon",
+                            "type": "string",
+                            "description": "rayon"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "titre",
+                            "type": "string",
+                            "description": "titre"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "description",
+                            "type": "string",
+                            "description": "Description de la situation"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "typeLocalisation",
+                            "type": "string",
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ],
+                            "description": "Localisation"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "declarantType",
+                            "type": "string",
+                            "enum": [
+                                "Agent",
+                                "Prestataire",
+                                "Int\u00e9rimaire"
+                            ],
+                            "description": "Situation de la personne ayant d\u00e9tect\u00e9*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "date",
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Date"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "linky",
+                            "type": "boolean",
+                            "defaultValue": false,
+                            "description": "Linky"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "eventHighGravityPotential",
+                            "type": "boolean",
+                            "defaultValue": false,
+                            "description": "\u00c9v\u00e8nement \u00e0 haut potentiel de gravit\u00e9"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "city",
+                            "type": "string",
+                            "description": "Ville"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "danger",
+                            "type": "string",
+                            "description": "Danger"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "cause",
+                            "type": "choice",
+                            "$ref": "choice",
+                            "items": {
+                                "$ref": "choice"
+                            },
+                            "description": "Cause"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "horsHeureOuvrable",
+                            "type": "boolean",
+                            "defaultValue": false,
+                            "description": "Hors heures ouvrables"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "pdl",
+                            "type": "string",
+                            "description": "PDL"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "autreCause",
+                            "type": "string",
+                            "description": "Pr\u00e9ciser"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "autreDanger",
+                            "type": "string",
+                            "description": "Pr\u00e9ciser"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "autreLocalisation",
+                            "type": "string",
+                            "description": "Autre localisation"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "location",
+                            "type": "string",
+                            "description": "Lieu"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "workSite",
+                            "type": "string"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "phaseTravail",
+                            "type": "string"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "prestataire",
+                            "type": "string"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "user",
+                            "type": "string",
+                            "description": "D\u00e9tect\u00e9e par*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "traiteeImmediatement",
+                            "type": "boolean",
+                            "defaultValue": false,
+                            "description": "Situation r\u00e9solue (actions correctrices d\u00e9j\u00e0 prises)"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "mesureConservatoireDescription",
+                            "type": "string",
+                            "description": "Mesures Conservatoires Prises"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "vehiculeModele",
+                            "type": "string",
+                            "description": "Mod\u00e8le*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "vehiculeImmatriculation",
+                            "type": "string",
+                            "description": "N\u00b0 immatriculation*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "actionsRealisees",
+                            "type": "string",
+                            "description": "Actions R\u00e9alis\u00e9es*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "typeAction",
+                            "type": "string",
+                            "defaultValue": 1,
+                            "description": "Type sauvegarde [1=>SAUVEGARDER , 2=>ENVOYER]"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "latitude",
+                            "type": "string",
+                            "description": "Latitude"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "longitude",
+                            "type": "string",
+                            "description": "Longitude"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "valider",
+                            "type": "string",
+                            "defaultValue": 1,
+                            "description": "valider [1=>valider [OK] , 2=>valider[KO]]"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "refuser",
+                            "type": "string",
+                            "defaultValue": 1,
+                            "description": "refuser [1=>refuse [OK] , 2=>refuse[KO]]"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "reouvrir",
+                            "type": "string",
+                            "defaultValue": 1,
+                            "description": "reouvrir [1=>refuse [OK] , 2=>reouvrir[KO]]"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Returns a collection of SD (objects)",
+                            "responseModel": "OupsBundle.Entity.Workflow.SituationDangereuse.HazardousSituation[]"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Invalid inputs"
+                        }
+                    ],
+                    "type": "OupsBundle.Entity.Workflow.SituationDangereuse.HazardousSituation[]"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "OupsBundle.Entity.Workflow.DangerFamily": {
+            "id": "OupsBundle.Entity.Workflow.DangerFamily",
+            "description": "object (DangerFamily)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Danger": {
+            "id": "OupsBundle.Entity.Workflow.Danger",
+            "description": "object (Danger)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "famille": {
+                    "$ref": "OupsBundle.Entity.Workflow.DangerFamily"
+                },
+                "preciser": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.File": {
+            "id": "OupsBundle.Entity.Workflow.File",
+            "description": "array of objects (File)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "string"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Site.City": {
+            "id": "OupsBundle.Entity.Site.City",
+            "description": "object (City)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Site.WorkSite": {
+            "id": "OupsBundle.Entity.Site.WorkSite",
+            "description": "object (WorkSite)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "enable": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift": {
+            "id": "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift",
+            "description": "object (WorkShift)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Accident.AccidentCause": {
+            "id": "OupsBundle.Entity.Workflow.Accident.AccidentCause",
+            "description": "array of objects (AccidentCause)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.User.User": {
+            "id": "OupsBundle.Entity.User.User",
+            "description": "object (User)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Reason": {
+            "id": "OupsBundle.Entity.Workflow.Reason",
+            "description": "array of objects (Reason)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Circumstance": {
+            "id": "OupsBundle.Entity.Workflow.Circumstance",
+            "description": "object (Circumstance)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VehiculeAccident.VehicleAccidentDetails": {
+            "id": "OupsBundle.Entity.Workflow.VehiculeAccident.VehicleAccidentDetails",
+            "description": "object (VehicleAccidentDetails)",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "heure": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "reasons": {
+                    "type": "array",
+                    "description": "array of objects (Reason)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Reason"
+                    }
+                },
+                "circumstance": {
+                    "$ref": "OupsBundle.Entity.Workflow.Circumstance"
+                },
+                "fichiers": {
+                    "type": "array",
+                    "description": "array of objects (File)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.File"
+                    }
+                },
+                "entretien": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "responsability": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VehiculeAccident.VehicleAccident": {
+            "id": "OupsBundle.Entity.Workflow.VehiculeAccident.VehicleAccident",
+            "description": "object (VehicleAccident)",
+            "properties": {
+                "state_name": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "numero": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "driver": {
+                    "$ref": "OupsBundle.Entity.User.User"
+                },
+                "detail": {
+                    "$ref": "OupsBundle.Entity.Workflow.VehiculeAccident.VehicleAccidentDetails"
+                },
+                "actions": {
+                    "type": "array",
+                    "description": "array of objects (Action)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Action.Action"
+                    }
+                },
+                "linky": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Action.ActionDetails": {
+            "id": "OupsBundle.Entity.Workflow.Action.ActionDetails",
+            "description": "object (ActionDetails)",
+            "properties": {
+                "titre": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "fondamentaux": {
+                    "type": "string",
+                    "description": "string"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.User.Prestataire": {
+            "id": "OupsBundle.Entity.User.Prestataire",
+            "description": "object (Prestataire)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "linky": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.SituationDangereuse.LienExterne": {
+            "id": "OupsBundle.Entity.Workflow.SituationDangereuse.LienExterne",
+            "description": "array of objects (LienExterne)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "label": {
+                    "type": "string",
+                    "description": "string"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.SituationDangereuse.HazardousSituation": {
+            "id": "OupsBundle.Entity.Workflow.SituationDangereuse.HazardousSituation",
+            "description": null,
+            "properties": {
+                "titre": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "phaseTravail": {
+                    "type": "string",
+                    "description": null
+                },
+                "danger": {
+                    "$ref": "OupsBundle.Entity.Workflow.Danger"
+                },
+                "traiteeImmediatement": {
+                    "type": "string",
+                    "description": null
+                },
+                "fichiers": {
+                    "type": "array",
+                    "description": "array of objects (File)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.File"
+                    }
+                },
+                "concernedUserTypes": {
+                    "type": "string",
+                    "description": null
+                },
+                "electricalEmergency": {
+                    "type": "string",
+                    "description": null
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "numero": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "pdl": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "city": {
+                    "$ref": "OupsBundle.Entity.Site.City"
+                },
+                "work_site": {
+                    "$ref": "OupsBundle.Entity.Site.WorkSite"
+                },
+                "type_localisation": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "phase_travail": {
+                    "$ref": "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift"
+                },
+                "cause": {
+                    "type": "array",
+                    "description": "array of objects (AccidentCause)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Accident.AccidentCause"
+                    }
+                },
+                "traitee_immediatement": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "actions_realisees": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "mesure_conservatoire_description": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "actions": {
+                    "type": "array",
+                    "description": "array of objects (Action)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Action.Action"
+                    }
+                },
+                "declarant_type": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "prestataire": {
+                    "$ref": "OupsBundle.Entity.User.Prestataire"
+                },
+                "vehicule_modele": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "vehicule_immatriculation": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "lien_externes": {
+                    "type": "array",
+                    "description": "array of objects (LienExterne)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.SituationDangereuse.LienExterne"
+                    }
+                },
+                "linky": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "event_high_gravity_potential": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "hors_heure_ouvrable": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "autre_localisation": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "autre_cause": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "autre_danger": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "autre_famille_danger": {
+                    "type": "string",
+                    "description": "string"
+                }
+            },
+            "required": [
+                "titre",
+                "description",
+                "phaseTravail",
+                "traiteeImmediatement",
+                "concernedUserTypes",
+                "electricalEmergency"
+            ]
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisitItem": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisitItem",
+            "description": "array of objects (SafetyVisitItem)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "string"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisitOffice": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisitOffice",
+            "description": "object (SafetyVisitOffice)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "sv": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitDetails"
+                },
+                "prestataire": {
+                    "$ref": "OupsBundle.Entity.User.Prestataire"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisitWorksite": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisitWorksite",
+            "description": "object (SafetyVisitWorksite)",
+            "properties": [],
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisitVehicule": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisitVehicule",
+            "description": "object (SafetyVisitVehicule)",
+            "properties": {
+                "immatriculation": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "marque": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "kilometrage": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisitConduite": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisitConduite",
+            "description": "object (SafetyVisitConduite)",
+            "properties": {
+                "marque": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "immatriculation": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "kilometrage": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisitPrestataire": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisitPrestataire",
+            "description": "object (SafetyVisitPrestataire)",
+            "properties": {
+                "prestataires": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "dtdict_obs": {
+                    "type": "string",
+                    "description": "string"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisitTSTHTA": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisitTSTHTA",
+            "description": "object (SafetyVisitTSTHTA)",
+            "properties": [],
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisitTSTBT": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisitTSTBT",
+            "description": "object (SafetyVisitTSTBT)",
+            "properties": [],
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisitDetails": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisitDetails",
+            "description": "object (SafetyVisitDetails)",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "analyse": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "fichiers": {
+                    "type": "array",
+                    "description": "array of objects (File)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.File"
+                    }
+                },
+                "local": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitOffice"
+                },
+                "chantier": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitWorksite"
+                },
+                "vehicule": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitVehicule"
+                },
+                "conduite": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitConduite"
+                },
+                "prestataire": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitPrestataire"
+                },
+                "tsthta": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitTSTHTA"
+                },
+                "tstbt": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitTSTBT"
+                },
+                "fire": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "polyvalente": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitWorksite"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.VPS.SafetyVisit": {
+            "id": "OupsBundle.Entity.Workflow.VPS.SafetyVisit",
+            "description": "object (SafetyVisit)",
+            "properties": {
+                "numero": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "actions": {
+                    "type": "array",
+                    "description": "array of objects (Action)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Action.Action"
+                    }
+                },
+                "items": {
+                    "type": "array",
+                    "description": "array of objects (SafetyVisitItem)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitItem"
+                    }
+                },
+                "detail": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisitDetails"
+                },
+                "linky": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "user_saisie": {
+                    "$ref": "OupsBundle.Entity.User.User"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Accident.AccidentType": {
+            "id": "OupsBundle.Entity.Workflow.Accident.AccidentType",
+            "description": "object (AccidentType)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Accident.AccidentSeriousness": {
+            "id": "OupsBundle.Entity.Workflow.Accident.AccidentSeriousness",
+            "description": "object (AccidentSeriousness)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Accident.AccidentDetails": {
+            "id": "OupsBundle.Entity.Workflow.Accident.AccidentDetails",
+            "description": "object (AccidentDetails)",
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "heure": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "lieu": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "horaire_travail": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "begin_morning": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "end_morning": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "begin_afternoon": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "end_afternoon": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "type": {
+                    "$ref": "OupsBundle.Entity.Workflow.Accident.AccidentType"
+                },
+                "gravite": {
+                    "$ref": "OupsBundle.Entity.Workflow.Accident.AccidentSeriousness"
+                },
+                "danger": {
+                    "$ref": "OupsBundle.Entity.Workflow.Danger"
+                },
+                "cause": {
+                    "type": "array",
+                    "description": "array of objects (AccidentCause)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Accident.AccidentCause"
+                    }
+                },
+                "jours_arret": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "lesions": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "temoins_agents": {
+                    "type": "array",
+                    "description": "array of objects (User)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.User"
+                    }
+                },
+                "temoins_autres": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "date_analyse": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "resume_succinct": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "resume": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "fichiers": {
+                    "type": "array",
+                    "description": "array of objects (File)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.File"
+                    }
+                },
+                "entretien": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "date_entretien": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "class_type": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "tiers": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "policereport": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "rejection_c_p_a_m": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "work_site": {
+                    "$ref": "OupsBundle.Entity.Site.WorkSite"
+                },
+                "city": {
+                    "$ref": "OupsBundle.Entity.Site.City"
+                },
+                "pdl": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "lien_externes": {
+                    "type": "array",
+                    "description": "array of objects (LienExterne)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.SituationDangereuse.LienExterne"
+                    }
+                },
+                "hors_heure_ouvrable": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "fire": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "mesure_conservatoire": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "mesure_conservatoire_description": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "type_localisation": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "autre_localisation": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "autre_cause": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "autre_danger": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "autre_famille_danger": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "date_accident_connu": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "heure_accicent_connu": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "adresse_temoins_autres": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "temoin": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "personne_avisee": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Accident.Accident": {
+            "id": "OupsBundle.Entity.Workflow.Accident.Accident",
+            "description": "object (Accident)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "numero": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "detail": {
+                    "$ref": "OupsBundle.Entity.Workflow.Accident.AccidentDetails"
+                },
+                "actions": {
+                    "type": "array",
+                    "description": "array of objects (Action)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Action.Action"
+                    }
+                },
+                "prestataire": {
+                    "$ref": "OupsBundle.Entity.User.Prestataire"
+                },
+                "linky": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "event_high_gravity_potential": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.User.TeamRegion": {
+            "id": "OupsBundle.Entity.User.TeamRegion",
+            "description": "object (TeamRegion)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "string"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.User.TeamUM": {
+            "id": "OupsBundle.Entity.User.TeamUM",
+            "description": "object (TeamUM)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "region": {
+                    "$ref": "OupsBundle.Entity.User.TeamRegion"
+                },
+                "admins": {
+                    "type": "array",
+                    "description": "array of objects (User)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.User"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.User.TeamDUM": {
+            "id": "OupsBundle.Entity.User.TeamDUM",
+            "description": "object (TeamDUM)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "um": {
+                    "$ref": "OupsBundle.Entity.User.TeamUM"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.User.TeamSDUM": {
+            "id": "OupsBundle.Entity.User.TeamSDUM",
+            "description": "object (TeamSDUM)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "dum": {
+                    "$ref": "OupsBundle.Entity.User.TeamDUM"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.User.UserDroits": {
+            "id": "OupsBundle.Entity.User.UserDroits",
+            "description": "array of objects (UserDroits)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "module_type": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "can_modify": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "can_be_notified": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.User.UserDelegation": {
+            "id": "OupsBundle.Entity.User.UserDelegation",
+            "description": "array of objects (UserDelegation)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "user": {
+                    "$ref": "OupsBundle.Entity.User.User"
+                },
+                "titre": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "libelle": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "collection_team": {
+                    "type": "array",
+                    "description": "array of objects (Team)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.Team"
+                    }
+                },
+                "droits": {
+                    "type": "array",
+                    "description": "array of objects (UserDroits)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.UserDroits"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.User.Team": {
+            "id": "OupsBundle.Entity.User.Team",
+            "description": "array of objects (Team)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "sdum": {
+                    "$ref": "OupsBundle.Entity.User.TeamSDUM"
+                },
+                "manager": {
+                    "$ref": "OupsBundle.Entity.User.User"
+                },
+                "users": {
+                    "type": "array",
+                    "description": "array of objects (User)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.User"
+                    }
+                },
+                "userDelegation": {
+                    "type": "array",
+                    "description": "array of objects (UserDelegation)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.UserDelegation"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Reunion.MeetingType": {
+            "id": "OupsBundle.Entity.Workflow.Reunion.MeetingType",
+            "description": "object (MeetingType)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Reunion.MeetingDetails": {
+            "id": "OupsBundle.Entity.Workflow.Reunion.MeetingDetails",
+            "description": "object (MeetingDetails)",
+            "properties": {
+                "type": {
+                    "$ref": "OupsBundle.Entity.Workflow.Reunion.MeetingType"
+                },
+                "commentaire": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "duree": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "heure": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "fichiers": {
+                    "type": "array",
+                    "description": "array of objects (File)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.File"
+                    }
+                },
+                "notes": {
+                    "type": "string",
+                    "description": "string"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Reunion.Meeting": {
+            "id": "OupsBundle.Entity.Workflow.Reunion.Meeting",
+            "description": "object (Meeting)",
+            "properties": {
+                "numero": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "manager": {
+                    "$ref": "OupsBundle.Entity.User.User"
+                },
+                "participants": {
+                    "type": "array",
+                    "description": "array of objects (User)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.User"
+                    }
+                },
+                "presents": {
+                    "type": "array",
+                    "description": "array of objects (User)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.User"
+                    }
+                },
+                "absents": {
+                    "type": "array",
+                    "description": "array of objects (User)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.User"
+                    }
+                },
+                "equipes": {
+                    "type": "array",
+                    "description": "array of objects (Team)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.Team"
+                    }
+                },
+                "actions": {
+                    "type": "array",
+                    "description": "array of objects (Action)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Action.Action"
+                    }
+                },
+                "detail": {
+                    "$ref": "OupsBundle.Entity.Workflow.Reunion.MeetingDetails"
+                },
+                "linky": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Incivilite.Rva": {
+            "id": "OupsBundle.Entity.Workflow.Incivilite.Rva",
+            "description": "object (Rva)",
+            "properties": {
+                "numero": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "titre": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "hour": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "location": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "city": {
+                    "$ref": "OupsBundle.Entity.Site.City"
+                },
+                "pain_scale": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "victims": {
+                    "type": "array",
+                    "description": "array of objects (User)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.User.User"
+                    }
+                },
+                "witnesses_known": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "first_aware_persons": {
+                    "$ref": "OupsBundle.Entity.User.User"
+                },
+                "debriefing_date": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "perpetrator_type": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "activity_during_event": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "support_doctor_or_social_worker": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "support_from_team": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "analyze_event_being": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "analyze_event_date": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "actions_or_analyze_event_being": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "work_accident": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "actions": {
+                    "type": "array",
+                    "description": "array of objects (Action)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.Action.Action"
+                    }
+                },
+                "declarant": {
+                    "$ref": "OupsBundle.Entity.User.User"
+                },
+                "energy": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "factor": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "linky": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "external_links": {
+                    "type": "array",
+                    "description": "array of objects (LienExterne)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.SituationDangereuse.LienExterne"
+                    }
+                },
+                "external_links_manager": {
+                    "type": "array",
+                    "description": "array of objects (LienExterne)",
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.SituationDangereuse.LienExterne"
+                    }
+                },
+                "prestataire": {
+                    "$ref": "OupsBundle.Entity.User.Prestataire"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.Action.Action": {
+            "id": "OupsBundle.Entity.Workflow.Action.Action",
+            "description": "array of objects (Action)",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "numero": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "vehicle_accident": {
+                    "$ref": "OupsBundle.Entity.Workflow.VehiculeAccident.VehicleAccident"
+                },
+                "detail": {
+                    "$ref": "OupsBundle.Entity.Workflow.Action.ActionDetails"
+                },
+                "sd": {
+                    "$ref": "OupsBundle.Entity.Workflow.SituationDangereuse.HazardousSituation"
+                },
+                "sv": {
+                    "$ref": "OupsBundle.Entity.Workflow.VPS.SafetyVisit"
+                },
+                "accident": {
+                    "$ref": "OupsBundle.Entity.Workflow.Accident.Accident"
+                },
+                "meeting": {
+                    "$ref": "OupsBundle.Entity.Workflow.Reunion.Meeting"
+                },
+                "rva": {
+                    "$ref": "OupsBundle.Entity.Workflow.Incivilite.Rva"
+                },
+                "responsable": {
+                    "$ref": "OupsBundle.Entity.User.User"
+                },
+                "reference_e_d_s_l": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "linky": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "date_creation": {
+                    "type": "string",
+                    "description": "DateTime",
+                    "format": "date-time"
+                },
+                "affectee": {
+                    "type": "boolean",
+                    "description": "boolean"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "string"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.SituationDangereuse.HazardousSituation[]": {
+            "id": "OupsBundle.Entity.Workflow.SituationDangereuse.HazardousSituation[]",
+            "description": "",
+            "properties": {
+                "": {
+                    "type": "array",
+                    "description": null,
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.SituationDangereuse.HazardousSituation"
+                    }
+                }
+            },
+            "required": [
+                ""
+            ]
+        }
+    },
+    "produces": [],
+    "consumes": [],
+    "authorizations": {
+        "apiKey": {
+            "type": "apiKey",
+            "passAs": "header",
+            "keyname": "Authorization"
+        }
+    }
+}

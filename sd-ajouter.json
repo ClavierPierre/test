@@ -1,0 +1,267 @@
+{
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "basePath": "\/api",
+    "resourcePath": "\/sd-ajouter",
+    "apis": [
+        {
+            "path": "\/sd\/ajouter\/{id}",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Create\/edit a hazardous situation",
+                    "nickname": "post_sd-ajouter",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "string",
+                            "required": true
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "titre",
+                            "type": "string",
+                            "description": "titre"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "description",
+                            "type": "string",
+                            "description": "Description de la situation"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "typeLocalisation",
+                            "type": "string",
+                            "enum": [
+                                0,
+                                1,
+                                2,
+                                3,
+                                4
+                            ],
+                            "description": "Localisation"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "declarantType",
+                            "type": "string",
+                            "enum": [
+                                "Agent",
+                                "Prestataire",
+                                "Int\u00e9rimaire"
+                            ],
+                            "description": "Situation de la personne ayant d\u00e9tect\u00e9*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "date",
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Date"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "linky",
+                            "type": "boolean",
+                            "defaultValue": false,
+                            "description": "Linky"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "eventHighGravityPotential",
+                            "type": "boolean",
+                            "defaultValue": false,
+                            "description": "\u00c9v\u00e8nement \u00e0 haut potentiel de gravit\u00e9"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "city",
+                            "type": "string",
+                            "description": "Ville"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "danger",
+                            "type": "string",
+                            "description": "Danger"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "cause",
+                            "type": "choice",
+                            "$ref": "choice",
+                            "items": {
+                                "$ref": "choice"
+                            },
+                            "description": "Cause"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "horsHeureOuvrable",
+                            "type": "boolean",
+                            "defaultValue": false,
+                            "description": "Hors heures ouvrables"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "pdl",
+                            "type": "string",
+                            "description": "PDL"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "autreCause",
+                            "type": "string",
+                            "description": "Pr\u00e9ciser"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "autreDanger",
+                            "type": "string",
+                            "description": "Pr\u00e9ciser"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "autreLocalisation",
+                            "type": "string",
+                            "description": "Autre localisation"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "location",
+                            "type": "string",
+                            "description": "Lieu"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "workSite",
+                            "type": "string"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "phaseTravail",
+                            "type": "string"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "prestataire",
+                            "type": "string"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "user",
+                            "type": "string",
+                            "description": "D\u00e9tect\u00e9e par*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "traiteeImmediatement",
+                            "type": "boolean",
+                            "defaultValue": false,
+                            "description": "Situation r\u00e9solue (actions correctrices d\u00e9j\u00e0 prises)"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "mesureConservatoireDescription",
+                            "type": "string",
+                            "description": "Mesures Conservatoires Prises"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "vehiculeModele",
+                            "type": "string",
+                            "description": "Mod\u00e8le*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "vehiculeImmatriculation",
+                            "type": "string",
+                            "description": "N\u00b0 immatriculation*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "actionsRealisees",
+                            "type": "string",
+                            "description": "Actions R\u00e9alis\u00e9es*"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "typeAction",
+                            "type": "string",
+                            "defaultValue": 1,
+                            "description": "Type sauvegarde [1=>SAUVEGARDER , 2=>ENVOYER]"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "latitude",
+                            "type": "string",
+                            "description": "Latitude"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "longitude",
+                            "type": "string",
+                            "description": "Longitude"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "valider",
+                            "type": "string",
+                            "defaultValue": 1,
+                            "description": "valider [1=>valider [OK] , 2=>valider[KO]]"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "refuser",
+                            "type": "string",
+                            "defaultValue": 1,
+                            "description": "refuser [1=>refuse [OK] , 2=>refuse[KO]]"
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "reouvrir",
+                            "type": "string",
+                            "defaultValue": 1,
+                            "description": "reouvrir [1=>refuse [OK] , 2=>reouvrir[KO]]"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "See standard HTTP status code reason for 200",
+                            "responseModel": "id.of.the.hazardous.situation.created.or.updated.on.success.on.error.form.fields.with.binded.values.and.errors"
+                        },
+                        {
+                            "code": 201,
+                            "message": "Returned when hazardous situations has been created or updated"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Returned when the input data are not valid or empty"
+                        }
+                    ],
+                    "type": "id.of.the.hazardous.situation.created.or.updated.on.success.on.error.form.fields.with.binded.values.and.errors"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "id.of.the.hazardous.situation.created.or.updated.on.success.on.error.form.fields.with.binded.values.and.errors": {
+            "id": "id.of.the.hazardous.situation.created.or.updated.on.success.on.error.form.fields.with.binded.values.and.errors",
+            "description": "",
+            "properties": [],
+            "required": []
+        }
+    },
+    "produces": [],
+    "consumes": [],
+    "authorizations": {
+        "apiKey": {
+            "type": "apiKey",
+            "passAs": "header",
+            "keyname": "Authorization"
+        }
+    }
+}

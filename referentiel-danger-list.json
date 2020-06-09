@@ -1,0 +1,35 @@
+{
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "basePath": "\/api",
+    "resourcePath": "\/referentiel-danger-list",
+    "apis": [
+        {
+            "path": "\/referentiel\/danger\/list",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Return a collection of Dangers",
+                    "nickname": "get_referentiel-danger-list",
+                    "parameters": [],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Return a collection of Dangers (objects)"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": [],
+    "produces": [],
+    "consumes": [],
+    "authorizations": {
+        "apiKey": {
+            "type": "apiKey",
+            "passAs": "header",
+            "keyname": "Authorization"
+        }
+    }
+}

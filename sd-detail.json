@@ -1,0 +1,46 @@
+{
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "basePath": "\/api",
+    "resourcePath": "\/sd-detail",
+    "apis": [
+        {
+            "path": "\/sd\/detail\/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "show situation dangereuse",
+                    "nickname": "get_sd-detail",
+                    "parameters": [
+                        {
+                            "paramType": "path",
+                            "name": "id",
+                            "type": "string",
+                            "required": true
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Returns the hazardous situation object matching the id sent in the request"
+                        },
+                        {
+                            "code": 404,
+                            "message": "Returned when the input data are not valid or empty"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": [],
+    "produces": [],
+    "consumes": [],
+    "authorizations": {
+        "apiKey": {
+            "type": "apiKey",
+            "passAs": "header",
+            "keyname": "Authorization"
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "basePath": "\/api",
+    "resourcePath": "\/referentiel-familledanger-list",
+    "apis": [
+        {
+            "path": "\/referentiel\/familledanger\/list",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Return a collection of FamilleDanger",
+                    "nickname": "get_referentiel-familledanger-list",
+                    "parameters": [],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Return a collection of FamilleDanger (objects)",
+                            "responseModel": "OupsBundle.Entity.Workflow.DangerFamily[]"
+                        }
+                    ],
+                    "type": "OupsBundle.Entity.Workflow.DangerFamily[]"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "OupsBundle.Entity.Workflow.DangerFamily": {
+            "id": "OupsBundle.Entity.Workflow.DangerFamily",
+            "description": null,
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.DangerFamily[]": {
+            "id": "OupsBundle.Entity.Workflow.DangerFamily[]",
+            "description": "",
+            "properties": {
+                "": {
+                    "type": "array",
+                    "description": null,
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.DangerFamily"
+                    }
+                }
+            },
+            "required": [
+                ""
+            ]
+        }
+    },
+    "produces": [],
+    "consumes": [],
+    "authorizations": {
+        "apiKey": {
+            "type": "apiKey",
+            "passAs": "header",
+            "keyname": "Authorization"
+        }
+    }
+}

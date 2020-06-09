@@ -1,0 +1,103 @@
+{
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "basePath": "\/api",
+    "resourcePath": "\/referentiel-site-list",
+    "apis": [
+        {
+            "path": "\/referentiel\/site\/list",
+            "operations": [
+                {
+                    "method": "POST",
+                    "summary": "Return a collection of Site",
+                    "nickname": "post_referentiel-site-list",
+                    "parameters": [
+                        {
+                            "paramType": "query",
+                            "name": "all",
+                            "type": "string",
+                            "description": null
+                        },
+                        {
+                            "paramType": "form",
+                            "name": "term",
+                            "type": "string",
+                            "description": ""
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Return a collection of Site (objects)",
+                            "responseModel": "OupsBundle.Entity.Site.WorkSite[]"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Invalid inputs"
+                        }
+                    ],
+                    "type": "OupsBundle.Entity.Site.WorkSite[]"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "OupsBundle.Entity.Site.WorkSite": {
+            "id": "OupsBundle.Entity.Site.WorkSite",
+            "description": null,
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": null
+                },
+                "region": {
+                    "type": "string",
+                    "description": null
+                },
+                "type": {
+                    "type": "string",
+                    "description": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                },
+                "enable": {
+                    "type": "boolean",
+                    "description": "boolean"
+                }
+            },
+            "required": [
+                "name",
+                "region",
+                "type"
+            ]
+        },
+        "OupsBundle.Entity.Site.WorkSite[]": {
+            "id": "OupsBundle.Entity.Site.WorkSite[]",
+            "description": "",
+            "properties": {
+                "": {
+                    "type": "array",
+                    "description": null,
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Site.WorkSite"
+                    }
+                }
+            },
+            "required": [
+                ""
+            ]
+        }
+    },
+    "produces": [],
+    "consumes": [],
+    "authorizations": {
+        "apiKey": {
+            "type": "apiKey",
+            "passAs": "header",
+            "keyname": "Authorization"
+        }
+    }
+}

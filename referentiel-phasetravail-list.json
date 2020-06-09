@@ -1,0 +1,70 @@
+{
+    "swaggerVersion": "1.2",
+    "apiVersion": "0.1",
+    "basePath": "\/api",
+    "resourcePath": "\/referentiel-phasetravail-list",
+    "apis": [
+        {
+            "path": "\/referentiel\/phasetravail\/list",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Return a collection of WorkShift",
+                    "nickname": "get_referentiel-phasetravail-list",
+                    "parameters": [],
+                    "responseMessages": [
+                        {
+                            "code": 200,
+                            "message": "Return a collection of WorkShift (objects)",
+                            "responseModel": "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift[]"
+                        },
+                        {
+                            "code": 400,
+                            "message": "Invalid inputs"
+                        }
+                    ],
+                    "type": "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift[]"
+                }
+            ]
+        }
+    ],
+    "models": {
+        "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift": {
+            "id": "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift",
+            "description": null,
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": []
+        },
+        "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift[]": {
+            "id": "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift[]",
+            "description": "",
+            "properties": {
+                "": {
+                    "type": "array",
+                    "description": null,
+                    "items": {
+                        "$ref": "OupsBundle.Entity.Workflow.SituationDangereuse.WorkShift"
+                    }
+                }
+            },
+            "required": [
+                ""
+            ]
+        }
+    },
+    "produces": [],
+    "consumes": [],
+    "authorizations": {
+        "apiKey": {
+            "type": "apiKey",
+            "passAs": "header",
+            "keyname": "Authorization"
+        }
+    }
+}
